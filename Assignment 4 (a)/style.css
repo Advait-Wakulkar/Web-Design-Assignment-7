@@ -1,0 +1,122 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  /* Welcome Message Styling */
+  .welcome-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-container h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin: 0;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  /* Calculator Container Styling */
+  .calculator-container {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .calculator-container h3 {
+    color: #555;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Label and Input Field Styling */
+  .calculator-container label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #555;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  .calculator-container input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    color: red;
+    font-size: 0.85em;
+    height: 16px;
+    margin-bottom: 8px;
+  }
+  
+  /* Button Container Styling */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-container button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Read-Only Result Field Styling */
+  #result {
+    background-color: #f7f7f7;
+    color: #333;
+    cursor: not-allowed;
+    font-weight: bold;
+  }
+  
+  /* Back Button Styling */
+#back-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  #back-button:hover {
+    background-color: #c82333;
+  }
+  

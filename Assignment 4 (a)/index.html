@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <div class="error-message" id="email-error"></div>
+    
+    <input type="text" id="username" placeholder="Username">
+    <div class="error-message" id="username-error"></div>
+    
+    <input type="password" id="password" placeholder="Password">
+    <div class="error-message" id="password-error"></div>
+    
+    <input type="password" id="confirm-password" placeholder="Confirm Password">
+    <div class="error-message" id="confirm-password-error"></div>
+    
+    <button id="login-button" disabled>Login</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

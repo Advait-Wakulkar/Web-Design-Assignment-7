@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="welcome-container">
+    <h2>Welcome, <span id="display-username">Guest</span>!</h2>
+    <button id="back-button">Back to Login</button> <!-- Back button added here -->
+  </div>
+
+  <div class="calculator-container">
+    <h3>Simple Calculator</h3>
+    
+    <label for="number1">Number 1:</label>
+    <input type="text" id="number1" placeholder="Enter a number">
+    <div class="error-message" id="number1-error"></div>
+
+    <label for="number2">Number 2:</label>
+    <input type="text" id="number2" placeholder="Enter a number">
+    <div class="error-message" id="number2-error"></div>
+
+    <div class="button-container">
+      <button id="add-btn">Add</button>
+      <button id="subtract-btn">Subtract</button>
+      <button id="multiply-btn">Multiply</button>
+      <button id="divide-btn">Divide</button>
+    </div>
+
+    <label for="result">Result:</label>
+    <input type="text" id="result" readonly>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const username = urlParams.get('username');
+      if (username) {
+        $('#display-username').text(username);
+      }
+
+      // Redirect back to the login page when the "Back" button is clicked
+      $('#back-button').on('click', () => {
+        window.location.href = 'index.html';
+      });
+
+      const calculate = (operation) => {
+        const num1 = parseFloat($('#number1').val());
+        const num2 = parseFloat($('#number2').val());
+
+        let isValid = true;
+        
+        if (isNaN(num1)) {
+          $('#number1-error').text('Please enter a valid number.');
+          isValid = false;
+        } else {
+          $('#number1-error').text('');
+        }
+
+        if (isNaN(num2)) {
+          $('#number2-error').text('Please enter a valid number.');
+          isValid = false;
+        } else {
+          $('#number2-error').text('');
+        }
+
+        if (isValid) {
+          let result;
+          switch (operation) {
+            case 'add':
+              result = num1 + num2;
+              break;
+            case 'subtract':
+              result = num1 - num2;
+              break;
+            case 'multiply':
+              result = num1 * num2;
+              break;
+            case 'divide':
+              result = num2 !== 0 ? num1 / num2 : 'Infinity';
+              break;
+          }
+          $('#result').val(result);
+        }
+      };
+
+      $('#add-btn').on('click', () => calculate('add'));
+      $('#subtract-btn').on('click', () => calculate('subtract'));
+      $('#multiply-btn').on('click', () => calculate('multiply'));
+      $('#divide-btn').on('click', () => calculate('divide'));
+    });
+  </script>
+</body>
+</html>
